@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "start-with-network"
+version = "1.0.0"
+description = "Starts a configured set of applications when the network is available"
+authors = ["Nekosis <37462865+Nekosis@users.noreply.github.com>"]
+readme = "README.md"
+license = "GPL-3.0-or-later"
+include = ["start-with-network.1", "programs-list.conf.5"]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+requests = "^2.31.0"
+pyxdg = "^0.28"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

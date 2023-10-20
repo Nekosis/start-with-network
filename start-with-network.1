@@ -1,0 +1,18 @@
+.TH START-WITH-NETWORK 1
+.SH NAME
+start-with-network \- start a configured set of applications when the network is available
+.SH SYNOPSIS
+.B start-with-network
+.SH DESCRIPTION
+.B start-with-network
+starts a set of applications set in a configuration file when it detects network access. It performs this check by pinging Cloudflare's DNS server, and proceeds to start the programs if it succeeds in connecting to it.
+.SH OPTIONS
+This command does not take any options.
+.SH FILES
+.TP 
+.I $XDG_CONFIG_HOME/start-with-network/programs-list.conf 
+Location of the
+.I programs-list.conf
+configuration file used to set the programs to launch. See programs-list.conf(5).
+.SH SEE ALSO
+programs-list.conf(5)

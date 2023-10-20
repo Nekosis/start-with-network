@@ -1,0 +1,49 @@
+.PP
+.TH PROGRAMS-LIST.CONF 5
+.SH NAME 
+programs-list.conf - the configuration file for start-with-network(1) 
+.SH SYNOPSIS 
+$XDG_CONFIG_HOME/start-with-network/programs-list.conf 
+.SH DESCRIPTION 
+.I programs-list.conf
+is the configuration file used by start-with-network(1) that dictates what programs the aformentioned script will launch when it detects an internet connection.
+.PP
+.I programs-list.conf
+uses an INI-like configuration format. As such, lines beginning with ; and # are ignored and can be used as comments. Additionally, note that ; can create inline comments, but # cannot.
+.PP
+The file consists of one section for each program you wish to launch when the computer gains an internet connection while start-with-network(1) is running.
+Defining a section is done by first creating a section header with the format:
+.PP
+.I [section-header]
+.PP
+The text 
+.I section-header
+is not read by start-with-network(1) and has no effect on its functionality.
+It is recommended to set the text to the name of the command\[cq]s executable, not including the full path or arguments.
+.PP
+Below the section header, one should create a key-value pair with the key 
+.I command
+in order to specify the command that should be launched by start-with-network(1).
+This is done with the following format:
+.PP
+.I command = /path/to/command-to-execute \[en]\[en]arguments
+.PP
+To add another command to run on network connection, simply create another section with a header and command definition.
+.SH FILES
+.TP 
+.I $XDG_CONFIG_HOME/start-with-network/programs-list.conf 
+Location of the
+.I programs-list.conf
+file.
+.SH EXAMPLES
+An example configuration might look like:
+.PP
+[armcord] 
+.sp 0
+command = /usr/bin/armcord
+.PP
+[element-desktop] 
+.sp 0
+command = /usr/bin/element-desktop \[en]\[en]hidden 
+.SH SEE ALSO 
+start-with-network(1)
